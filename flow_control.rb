@@ -81,3 +81,15 @@ test_1 = (1 == 1 && 2 > 1)
 test_2 = (1 != 0 || 1 > 0)
 # test_3 = should be false
 test_3 = (1 !=1 && 2 > 3)
+
+########################################################################
+print "Gimmie some input: "
+user_input = gets.chomp
+user_input.downcase!
+if user_input.include? 's'
+  user_input.gsub!(/s/, "th")
+else
+  puts "it aint got no s"
+end
+puts "Your new name is, #{user_input}"
+
