@@ -90,3 +90,18 @@ end
 
 30.times {print "Ruby!"}
 
+puts "need input please"
+text = gets.chomp
+words = text.split(" ")
+
+puts "need another input"
+redact = gets.chomp
+
+words.each do |word|
+    if word != redact
+        print word + " "
+    else
+        print "REDACTED "
+    end
+end
+
