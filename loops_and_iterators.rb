@@ -105,3 +105,20 @@ words.each do |word|
     end
 end
 
+# Histograms
+puts "Enter some input: "
+text = gets.chomp
+words = text.split(" ")
+frequencies = Hash.new(0)
+words.each { |word| frequencies[word] += 1}
+=begin
+or it can be written like this
+words.each do |word|
+  frequencies[word] += 1
+end
+=end
+frequencies = frequencies.sort_by {|a, b| b}
+frequencies.reverse!
+frequencies.each do |a, b|
+  puts a + " " + b.to_s
+end
