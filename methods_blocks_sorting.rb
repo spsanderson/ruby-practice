@@ -130,3 +130,42 @@ my_array.each { |x| puts x**2 }
 
 fruits = ["orange", "apple", "banana", "pear", "grapes"]
 fruits.sort! { |firstFruit, secondFruit| secondFruit <=> firstFruit }
+
+# Ordering
+def alphabetize(arr, rev=false)
+  if rev
+    arr.sort { |item1, item2| item2 <=> item1 }
+  else
+    arr.sort { |item1, item2| item1 <=> item2 }
+  end
+end
+
+books = ["Heart of Darkness", "Code Complete", "The Lorax", "The Prophet", "Absalom, Absalom!"]
+
+puts "A-Z: #{alphabetize(books)}"
+puts "Z-A: #{alphabetize(books, true)}"
+
+def alphabetize(arr, rev=false)
+  if rev
+    arr.sort { |item1, item2| item2 <=> item1 }
+  else
+    arr.sort!
+  end
+end
+
+items = ["a", "b"]
+
+puts "A-Z: #{alphabetize(items)}"
+puts "Z-A: #{alphabetize(items, true)}"
+
+def alphabetize(arr, rev=false)
+  if rev
+    arr.sort.reverse
+  else
+    arr.sort!
+  end
+end
+
+items = ['a', 'b']
+puts "A-Z: #{alphabetize(items)}"
+puts "Z-A: #{alphabetize(items, true)}"
